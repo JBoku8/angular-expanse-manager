@@ -1,5 +1,35 @@
-<div class="container">
-  <div class="box">
-    Bulma CSS
+<div class="container py-4">
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" [routerLink]="['/']">
+        <img
+          src="https://bulma.io/images/bulma-logo.png"
+          alt="Bulma: a modern CSS framework based on Flexbox"
+          width="112"
+          height="28"
+        />
+      </a>
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" [routerLink]="['/']"> Home </a>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <a class="navbar-item" [routerLink]="['/auth/login']"> Login </a>
+      <a class="navbar-item" [routerLink]="['/auth/register']"> Register </a>
+    </div>
+  </nav>
+
+  <div class="columns">
+    <div class="column is-full">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

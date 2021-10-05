@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-v3": {
+      "hosting": {
+        "angular-expanse-manager": [
+          "angular-v3"
+        ]
+      }
+    }
+  }
+}
