@@ -19,11 +19,27 @@
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" [routerLink]="['/']"> Home </a>
+        <a
+          class="navbar-item"
+          [routerLink]="['/profile']"
+          *ngIf="this.authService.userToken"
+        >
+          Profile
+        </a>
       </div>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end" *ngIf="!this.authService.userToken">
       <a class="navbar-item" [routerLink]="['/auth/login']"> Login </a>
       <a class="navbar-item" [routerLink]="['/auth/register']"> Register </a>
+    </div>
+    <div class="navbar-end" *ngIf="this.authService.userToken">
+      <button
+        class="navbar-item button is-primary"
+        (click)="this.authService.logOut()"
+      >
+        <span class="has-text-weight-semibold">Log Out</span>
+        <i class="ml-1 fas fa-sign-out-alt"></i>
+      </button>
     </div>
   </nav>
 
@@ -32,4 +48,14 @@
       <router-outlet></router-outlet>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Expanse Manager</strong> by
+
+        <a href="https://cs-women.com">CS-WOMEN.com</a>.
+      </p>
+    </div>
+  </footer>
 </div>
