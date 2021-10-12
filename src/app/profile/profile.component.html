@@ -1,1 +1,80 @@
-<p>profile works!</p>
+<div class="box p-5">
+  <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+    <div class="field">
+      <label class="label">Full Name</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Full name"
+          name="fullName"
+          [(ngModel)]="profile.fullName"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Username</label>
+      <div class="control has-icons-left has-icons-right">
+        <!-- is-success -->
+        <input
+          class="input"
+          type="text"
+          placeholder="Text input"
+          name="userName"
+          [(ngModel)]="profile.userName"
+        />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <!-- <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span> -->
+      </div>
+      <!-- <p class="help is-success">This username is available</p> -->
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <!-- is-danger -->
+        <input
+          class="input"
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+          [(ngModel)]="profile.email"
+        />
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <!-- <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span> -->
+      </div>
+      <!-- <p class="help is-danger">This email is invalid</p> -->
+    </div>
+
+    <div class="field">
+      <label class="label">Bio</label>
+      <div class="control">
+        <textarea
+          class="textarea"
+          placeholder="Textarea"
+          name="bio"
+          [(ngModel)]="profile.bio"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" type="submit">Update Profile</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

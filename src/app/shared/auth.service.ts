@@ -18,6 +18,10 @@ export class AuthService {
     });
   }
 
+  getCurrentUser() {
+    return this.afAuth.currentUser;
+  }
+
   async login(credentials: ILoginData) {
     try {
       const response = await this.afAuth.signInWithEmailAndPassword(
